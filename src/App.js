@@ -7,6 +7,26 @@ import {
 } from "react-router-dom";
 import "./App.css";
 
+
+const header = {
+  alg: 'HS256',
+  type: 'JWT'
+};
+
+const payload  ={
+  "sub": "1234567890",
+  "name": "John Doe",
+  "iat": 1516239022
+};
+
+const jwtSecret = 'secret123'
+
+const encodingReplacements = {
+  '+': '_',
+  '/': '_',
+  '=': ''
+};
+
 import { AuthProvider, AuthContext } from "./context/AuthContext";
 import { FetchProvider } from "./context/FetchContext";
 
